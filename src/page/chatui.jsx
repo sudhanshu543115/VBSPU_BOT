@@ -45,11 +45,25 @@ return (
 <div className="chat-panel__glow chat-panel__glow--two" />
 
 <header className="chat-header">
+<div className="chat-header__topbar">
+<div>
 <p className="chat-header__eyebrow">VBSPU Assistant</p>
 <h1>Ask about the university website</h1>
 <p className="chat-header__text">
 Get quick answers based on the latest scraped content from the VBSPU website.
 </p>
+</div>
+
+<button
+className="chat-header__nav-button"
+onClick={() => {
+window.history.pushState({}, "", "/");
+window.dispatchEvent(new PopStateEvent("popstate"));
+}}
+>
+Open Demo Page
+</button>
+</div>
 </header>
 
 <section className="chat-feed">
